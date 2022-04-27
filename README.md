@@ -1,7 +1,22 @@
 # Harry Potter hat
 
+## Requirements
+1.Python 3.x.x
+2.Numpy library
+3.Pandas library
+
 ## How to use.
 ### potter_hat.py
-1.Run script potter_hat.py and then fill names of people. <br>
-2.My code will print the house which choose the name that you fill <br>
-3.If you fill 50 names, the iteration will end, and print summary that tell us how many people in each houses. <br>
+เมื่อรัน *potter_hat.py* โค๊ดจะให้ใส่ชื่อลงไป จากนั้นจะ print ออกมาให้ว่าคนคนนั้นอยู่ในบ้านไหนใน harry potter โดยการสุ่ม ซึ่งผมได้ set ไว้ที่ ต้องใส่ชื่อครบทั้ง 50 ครั้ง โดยเมื่อใส่ชื่อครบ 50 ครั้ง โค๊ดจะ print summary มาให้ว่าแต่ละบ้านมีคนทั้งหมดกี่คน
+
+### for_test.py
+ผมปรับเปลี่ยนเบ็กน้อยจาก *potter_hat.py* โดยสำหรับวิธีใช้คือ โหลดไฟล์ *for_test.py* และ *name_test.csv* ลงไปไว้ในโฟลเดอร์เดียวกัน จากนั้นเมื่อกดรันไฟล์ *for_test.py* โค๊ดจะรันโดยอัตโนมัติ
+
+
+## วิธีในการสุ่มบ้าน
+ผมจะกำหนดให้แต่ละบ้านมีโอกาสในการถูกสุ่ม 0.25 และเมื่อผ่านการสุ่มครั้งแรกไปนั้น โอกาสในการสุ่มจะเปลี่ยนไปตามจำนวนคนในบ้าน ซึ่งมีวิธีคิดดังนี้
+กำหนดให้ n1, n2, n3, n4 แทนจำนวนคนในบ้านทั้งสี่บ้าน และ p1, p2, p3, p4 แทนโอกาสในการจะถูกแต่ละบ้านเลือก ผมกำหนดให้
+sum = exp(n1) + exp(n2) + exp(n3) + exp(n4)
+p1 = (sum - exp(n1)) / (sum - exp(n1) + sum - exp(n2) + sum - exp(n3) + sum - exp(n4))
+เช่น เมื่อผ่านการเลือกครั้งแรกไป สมมติให้ n1 = 1, n2 = n3 = n4 = 0 -> sum = e+3 หรือ 5.71
+จะได้ p1 = (5.71 - 2.71) / (5.71 - 2.71 + 3x4.71) = 0.175 และ p2=p3=p4 = 0.2749 โดยหากทำวิธีนี้ จะทำให้บ้านที่มีจำนวนคนเยอะ จะมีโอกาสน้อยลงที่จะถูกสุ่มเพิ่ม
