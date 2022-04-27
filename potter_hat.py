@@ -4,12 +4,23 @@ import sys
 import time
 
 def sprint(str):
+    """ print text slowly
+    """
     for c in str + '\n':
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(3./90)
 
 def potter_hat(n_iteration=50) :  
+    """ choosing person to each houses(Griffindor, hufflepuff, ravenclaw, slytherin)
+    then print result and summary
+    
+    Parameter
+    _________
+    n_iteration : int
+        number of iterations that want to fill names.
+        
+    """
     count_dict = {
         'griffindor' : [0,0.25],
         'hufflepuff' : [0,0.25],
