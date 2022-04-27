@@ -1,9 +1,9 @@
 # Harry Potter hat
 
 ## Requirements
-1.Python 3.x.x
-2.Numpy library
-3.Pandas library
+1.Python 3.x.x <br>
+2.Numpy library <br>
+3.Pandas library <br>
 
 ## How to use.
 ### potter_hat.py
