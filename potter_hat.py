@@ -29,7 +29,6 @@ def potter_hat(n_iteration=50) :
     }
 
     name_dict = {}
-    surname_list = []
     i = 0
     while i < n_iteration :
         name = input('Please tell me your name : ')
